@@ -1,0 +1,17 @@
+{
+  "name": "calculator_web_server",
+  "version": "1.0.0",
+  "description": "web server for running a total calculator website",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js"
+  },
+  "author": "Alex Bohnson",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "path": "^0.12.7"
+  }
+}
