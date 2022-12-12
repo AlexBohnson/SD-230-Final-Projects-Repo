@@ -1,0 +1,37 @@
+<form class="flex flex-col justify-center align-center" action="/convert" method="get">
+    <div class="flex flex-row justify-between align-center flex-wrap gap-2 my-12">
+        <div class="flex flex-col align-left justify-end">
+            <label for="amount">Amount</label>
+            <input id="amount" type="number" name="amount" required class="input[type=number] rounded-md border-gray-300 shadow-sm
+                    focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+        </div>
+        <div class="flex flex-col align-left justify-end">
+            <label for="from">From</label>
+            <select id="from" type="number" name="from" required class="rounded-md border-gray-300 shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+                <% for ([code, name] of options) { %>
+                    <option value="<%-code %>"><%- code%> - <%- name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="flex flex-col align-left justify-end">
+            <button id="switch-button" type="button" class="shadow-sm rounded-full border border-gray-300 h-12 w-12
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-[#02208A]">
+            <i class="fa-solid fa-repeat"></i>
+            </button>
+        </div>
+        <div id="to-button" class="flex flex-col align-left justify-end">
+            <label for="to">To</label>
+            <select id="to" type="number" name="to" required class="rounded-md border-gray-300 shadow-sm
+            focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            <% for ([code, name] of options) { %>
+                <option value="<%-code %>"><%- code%> - <%- name %></option>
+            <% } %>
+            </select>
+        </div>
+    </div>
+    <div class="flex flex-row justify-end">
+        <button id="convert-button" type="submit"
+            class="bg-sky-500 rounded-md px-4 py-2 hover:bg-gray-300 hover:text-blue-900 text-white">Convert</button>
+    </div>
+</form>
